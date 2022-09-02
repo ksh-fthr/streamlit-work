@@ -1,12 +1,21 @@
 # streamlit-work
 Streamlit を使った学習用リポジトリ
 
+# 環境
+本リポジトリの内容は次の環境で確認しております。
+
+| 環境 | バージョン | 備考 |
+| ---- | ---------- | ---- |
+| Python | 3.10.6 | python --version |
+| Poetry | 1.1.15 | poetry --version |
+| Streamlit | ^1.12.2 | pyproject.toml から | 
+
 # 事前準備
 ## Poetry のインストール
 このリポジトリで扱うアプリは `Poetry` でパッケージ管理を行っています。
 事前に `Poetry` をインストールしてください。
 
-- Poetry の公式ぺーじは [こちら](https://python-poetry.org/)
+- Poetry の公式ページは [こちら](https://python-poetry.org/)
 - Poetry の GitHub は [こちら](https://github.com/python-poetry/poetry)
 
 ## セットアップ
