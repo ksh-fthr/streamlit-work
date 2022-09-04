@@ -21,8 +21,44 @@ Python の Web フレームワーク [Streamlit](https://streamlit.io/) を使�
 - Poetry の公式ページは [こちら](https://python-poetry.org/)
 - Poetry の GitHub は [こちら](https://github.com/python-poetry/poetry)
 
-## セットアップ
-次のコマンドを実行し環境をセットアップしてください。
+# セットアップ
+ここで示す手順はすべて本リポジトリのルート直下(以降、プロジェクトディレテクトリとします)で実行し、確認したものです。
+
+## 仮想環境( `.venv` )の作成先を設定する
+仮想環境の設定を確認してください。
+
+```bash
+% poetry config --list        # 設定を確認
+(省略)
+virtualenvs.in-project = null # 仮想環境がプロジェクトディレクトに作成されない
+(省略)
+```
+
+仮想環境をプロジェクトディレクトリに設定します。
+```bash
+% poetry config virtualenvs.in-project true
+% poetry config --list
+virtualenvs.in-project = true # 仮想環境がプロジェクトディレクトに作成される
+```
+
+### 補足
+`virtualenvs.in-project = null` の状態ですでに後述の `poetry install` を行っていた場合、仮想環境は ( [デフォルト PATH](https://python-poetry.org/docs/configuration/#virtualenvspath)は `{cache-dir}/virtualenvs` ) に作成されています。
+次のコマンドで作成済みの仮想環境を削除してください。
+
+```bash
+# 仮想環境を確認する
+% poetry env list
+(環境が表示されます)
+% poetry env remove ${表示された環境を指定してくだい}
+
+# もういちど `poetry env list` を実行してみる
+% poetry env list
+(削除した環境は表示されません)
+```
+
+## 仮想環境の作成
+仮想環境を作成します。
+下記コマンドを実行することで、 [pyproject.toml](./pyproject.toml) に登録された package がインストールされた仮想環境が作成されます。
 
 ```bash
 % poetry install
@@ -30,33 +66,26 @@ Installing dependencies from lock file
 
 Package operations: 52 installs, 0 updates, 0 removals
 
-  • Installing six (1.16.0)
-  ...
-  ...
-  ...
+(省略)
+
 Installing the current project: streamlit-work (0.1.0)
 ```
 
-## 補足
+プロジェクトディレクトリに仮想環境( `.venv` ) が作成されていることを確認します。
+```bash
+% ls -la
+(省略)
+drwxrwxr-x 6 ksh ksh  4096  9月  4 12:29 .venv
+```
+
+### 補足
 Streamlit は次のコマンドで予め [pyproject.toml](./pyproject.toml) に登録ずみです。
-(実行時のログ含めて記載しています)
 
 ```bash
 % poetry add streamlit
-Using version ^1.12.2 for streamlit
-
-Updating dependencies
-Resolving dependencies... (2.7s)
-
-Writing lock file
-
-Package operations: 0 installs, 2 updates, 0 removals
-
-  • Updating jsonschema (4.14.0 -> 4.15.0)
-  • Updating pandas (1.4.3 -> 1.4.4)
 ```
 
-# 実行
+# アプリケーションの起動
 起動用のスクリプトを用意しております。
 次のコマンドを実行して起動してください。
 
