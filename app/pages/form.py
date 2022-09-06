@@ -2,16 +2,13 @@ import streamlit as st
 import datetime
 
 # st.form
-st.markdown('### form のサンプル')
-link_form = '[form](https://docs.streamlit.io/library/api-reference/control-flow/st.form)'
-st.markdown(f'これは {link_form} を使ったサンプルです. ')
-
+st.markdown('### 入力ウィジェットを使った form のサンプル')
+link_form = '[form](https://docs.streamlit.io/library/api-reference/control-flow)'
 link_input_widjets = '[input widjets](https://docs.streamlit.io/library/api-reference/widgets#input-widgets)'
+st.markdown(f'これは {link_input_widjets} を使った {link_form} のサンプルです. ')
 st.markdown(f'入力ウィジェットについては {link_input_widjets} を参照してください.')
 
-
 col1, col2 = st.columns(2)
-
 with col1:
     st.caption('入力フォームのサンプル')
     with st.form(key='profile_form'):
