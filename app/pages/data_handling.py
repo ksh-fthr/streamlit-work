@@ -12,3 +12,4 @@ st.caption('温度データをグラフで表示')
 st.line_chart(df)
 st.bar_chart(df['2021年'])
 st.bar_chart(df['2022年'])
+
