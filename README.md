@@ -42,7 +42,7 @@ virtualenvs.in-project = true # 仮想環境がプロジェクトディレクト
 ```
 
 ### 補足
-`virtualenvs.in-project = null` の状態ですでに後述の `poetry install` を行っていた場合、仮想環境は ( [デフォルト PATH](https://python-poetry.org/docs/configuration/#virtualenvspath)は `{cache-dir}/virtualenvs` ) に作成されています。
+`virtualenvs.in-project = null` の状態ですでに後述の `poetry install` を行っていた場合、仮想環境は [デフォルト PATH](https://python-poetry.org/docs/configuration/#virtualenvspath) ( `{cache-dir}/virtualenvs` ) に作成されています。
 次のコマンドで作成済みの仮想環境を削除してください。
 
 ```bash
