@@ -4,6 +4,12 @@ st.markdown('### Utilities のサンプル')
 utilities_link = '[Utilities](https://docs.streamlit.io/library/api-reference/utilities)'
 st.markdown(f'ここでは {utilities_link} を扱ったサンプルを実装します. ')
 
+# タブ利用時は複数用意する
+# リストの中身が一つだけだと with で object を指定した際に実行時エラーとして下記が発生する
+#
+# ```:エラー
+# ValueError: not enough values to unpack (expected 2, got 1)
+# ```
 tab_page_config, tab_echo = st.tabs(["set_page_config", "echo"])
 
 with tab_page_config:
