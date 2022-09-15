@@ -12,12 +12,33 @@ st.markdown(f'ここでは {utilities_link} を扱ったサンプルを実装し
 # ```
 tab_page_config, tab_echo = st.tabs(["set_page_config", "echo"])
 
+
 with tab_page_config:
     st.markdown('#### st.set_page_conofig のサンプル')
     st_set_page_config_link = '[st.set_page_config](https://docs.streamlit.io/library/api-reference/utilities/st.set_page_config)'
-    st.markdown(f'以下は {st_set_page_config_link} のサンプルです')
+    st.markdown(f'以下は {st_set_page_config_link} のサンプルコードです')
 
-    st.write('工事中...')
+    code = '''
+    st.set_page_config(
+      page_title="Ex-stream-ly Cool App",
+      page_icon="🧊",
+      layout="wide",
+      initial_sidebar_state="expanded",
+      menu_items={
+        'Get Help': 'https://www.extremelycoolapp.com/help',
+        'Report a bug': "https://www.extremelycoolapp.com/bug",
+        'About': "# This is a header. This is an *extremely* cool app!"
+      }
+    )
+    '''
+    st.code(code, language='python')
+
+    st.write('reference には下記注釈が記載されています')
+    note = '''
+      This must be the first Streamlit command used in your app, and must only be set once.
+    '''
+    st.code(note)
+    st.write('set_page_config を利用する場合は上記注釈にご留意ください')
 
 with tab_echo:
     st.markdown('#### st.echo のサンプル')
