@@ -16,10 +16,15 @@ Python の Web フレームワーク [Streamlit](https://streamlit.io/) を使�
 # 事前準備
 ## Poetry のインストール
 このリポジトリで扱うアプリは `Poetry` でパッケージ管理を行っています。
-事前に `Poetry` をインストールしてください。
+次のコマンドを実行して `Poetry` をインストールしてください。
+
+```bash
+$ curl -sSL https://install.python-poetry.org | python3 -
+```
 
 - Poetry の公式ページは [こちら](https://python-poetry.org/)
 - Poetry の GitHub は [こちら](https://github.com/python-poetry/poetry)
+
 
 # セットアップ
 ここで示す手順はすべて本リポジトリのルート直下(以降、プロジェクトディレテクトリとします)で実行し、確認したものです。

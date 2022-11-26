@@ -7,7 +7,7 @@ link_chart_widjets = '[chart widjets](https://docs.streamlit.io/library/api-refe
 st.markdown(f'これは {link_chart_widjets} を使ったサンプルです. ')
 st.markdown(f'チャートウィジェットについては {link_chart_widjets} を参照してください.')
 
-df = pd.read_csv('./data/temperature.csv', index_col='月')
+df = pd.read_csv('./app/data/temperature.csv', index_col='月')
 
 # レイアウト調整
 col1, col2, col3 = st.columns(3)
